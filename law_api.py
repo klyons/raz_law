@@ -1,0 +1,1 @@
+from justopinion import CAPClient
