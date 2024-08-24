@@ -2,6 +2,7 @@
 # https://medium.datadriveninvestor.com/legal-and-justice-related-python-libraries-d3888c08768a
 import os
 from justopinion import CAPClient
+import requests
 client = CAPClient(api_token='49eb70bc06a32b6ec66b336ddcb5d68a6d010214')
 #49eb70bc06a32b6ec66b336ddcb5d68a6d010214
 
@@ -26,7 +27,6 @@ citations = []
 for case in case_names:
     citations.append(case["cite"])
 print(citations)
-
 
 #make a function for this
 def find_citations(citations):
@@ -69,3 +69,7 @@ def example():
 	oracle_download = client.fetch(query="750 F.3d 1339")
 	#oracle_case = client.read_cite("750 F.3d 1339", full_case=True)
 	print(oracle_download)
+
+
+if __name__ == "__main__":
+    #call your fuctions here to test them
