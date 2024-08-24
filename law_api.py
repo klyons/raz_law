@@ -21,14 +21,14 @@ case_names = oracle_data["results"][0]["cites_to"]
 oracle_download = client.fetch(query="750 F.3d 1339")
 oracle_data["results"][0]["name"]
 
-#make this a function
-citations = []
-for case in case_names:
-    citations.append(case["cite"])
-print(citations)
+def citations():
+    citations = []
+    for case in case_names:
+        citations.append(case["cite"])
+    print(citations)
 
 
-#make a function for this
+
 def find_citations(citations):
 	case_laws = []
 	for case in citations:
@@ -69,3 +69,7 @@ def example():
 	oracle_download = client.fetch(query="750 F.3d 1339")
 	#oracle_case = client.read_cite("750 F.3d 1339", full_case=True)
 	print(oracle_download)
+	
+if __name__ == "__main__":
+	citations()
+	find_citations()
